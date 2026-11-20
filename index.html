@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#3b3022">
+<title>炉边书局</title>
+  <script type="module" crossorigin src="./assets/index-6V47XeAQ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bo1StPvA.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#1" aria-label="炉边书局，回到第一章"><span class="seal">炉</span>炉边书局</a>
+  <span class="work">崇祯元年，我造了台会思考的炉子</span>
+  <nav>
+    <button id="catalog">目录</button>
+    <button id="prefs">阅读设置</button>
+  </nav>
+</header>
+
+<main class="scroll">
+  <article class="paper">
+    <header class="head">
+      <div class="slip"><span id="vol">卷一</span><span id="chapter"></span><h1 id="title"></h1></div>
+      <p class="date" id="date"></p>
+    </header>
+    <div id="prose"></div>
+    <p class="end" aria-hidden="true">本章完</p>
+    <section class="after">
+      <a id="next" class="next"></a>
+      <div class="acts">
+        <button id="support">支持作者</button>
+      </div>
+      <h2>本章留评</h2>
+      <p class="hint">这是本地样板：留言只存在这台电脑的浏览器里，别人看不到。</p>
+      <form id="noteForm">
+        <label for="note">写下读后感</label>
+        <textarea id="note" maxlength="800" required></textarea>
+        <button>保存留言</button>
+      </form>
+      <div id="notes"></div>
+    </section>
+  </article>
+
+  <div class="geshui" aria-hidden="true"></div>
+
+  <aside class="silk" aria-label="本章图版">
+    <div class="view" id="view" tabindex="0">
+      <img id="poster" alt="">
+      <div class="colophon" id="colophon">
+        <span class="mark" aria-hidden="true">炉边<br>藏画</span>
+        <p id="plateNote"></p>
+        <h2 id="plateTitle"></h2>
+      </div>
+      <p class="tip" id="tip"></p>
+    </div>
+  </aside>
+</main>
+
+<dialog id="dialog"><div id="dialogBody"></div><button id="close">关闭</button></dialog>
+</body>
+</html>
