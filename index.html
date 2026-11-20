@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#3b3022">
 <title>炉边书局</title>
-  <script type="module" crossorigin src="./assets/index-6V47XeAQ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Bo1StPvA.css">
+  <script type="module" crossorigin src="./assets/index-C_YkaxWr.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-1F2B6oFJ.css">
 </head>
 <body>
 <header class="bar">
@@ -21,25 +21,55 @@
 <main class="scroll">
   <article class="paper">
     <header class="head">
-      <div class="slip"><span id="vol">卷一</span><span id="chapter"></span><h1 id="title"></h1></div>
+      <div class="slip"><span id="vol">卷一</span><span id="chapter"></span><h1 id="title" tabindex="-1"></h1></div>
       <p class="date" id="date"></p>
     </header>
     <div id="prose"></div>
     <p class="end" aria-hidden="true">本章完</p>
-    <section class="after">
-      <a id="next" class="next"></a>
+    <footer class="after">
+      <a id="next" class="next" hidden>
+        <span class="next-copy"><span class="next-label">下一章</span><strong id="nextTitle"></strong></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
+      </a>
+      <button id="endCatalog" class="next" type="button" hidden>
+        <span class="next-copy"><span class="next-label">已读至最新章</span><strong>回到目录</strong></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
+      </button>
       <div class="acts">
-        <button id="support">支持作者</button>
+        <button id="like" class="action" type="button" aria-pressed="false" aria-describedby="localHint">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v10H3V10h4Zm0 0 4.5-7A2.5 2.5 0 0 1 14 5.5L13 9h5.6a2 2 0 0 1 2 2.4l-1.3 7A2 2 0 0 1 17.4 20H7"/></svg>
+          点赞
+        </button>
+        <button id="support" class="action" type="button">支持作者</button>
       </div>
-      <h2>本章留评</h2>
-      <p class="hint">这是本地样板：留言只存在这台电脑的浏览器里，别人看不到。</p>
-      <form id="noteForm">
-        <label for="note">写下读后感</label>
-        <textarea id="note" maxlength="800" required></textarea>
-        <button>保存留言</button>
-      </form>
-      <div id="notes"></div>
-    </section>
+      <p id="likeStatus" class="reaction-status" role="status"></p>
+      <section class="discussion" aria-labelledby="discussionTitle">
+        <div class="discussion-heading">
+          <h2 id="discussionTitle">本章评论</h2>
+          <span id="noteCount" class="note-count">0 条</span>
+        </div>
+        <p id="localHint" class="hint">评论和点赞仅保存在当前浏览器，其他读者看不到。Cookie 用于记住游客编号和昵称。</p>
+        <form id="noteForm" class="composer">
+          <span id="readerAvatar" class="comment-avatar" aria-hidden="true">客</span>
+          <div class="composer-body">
+            <div class="identity">
+              <label for="nickname">昵称</label>
+              <input id="nickname" name="nickname" maxlength="20" autocomplete="nickname" placeholder="填写昵称" aria-describedby="nicknameHint">
+            </div>
+            <p id="nicknameHint" class="field-hint">可直接修改，留空则使用游客昵称。</p>
+            <label for="note">写下读后感</label>
+            <textarea id="note" name="comment" maxlength="800" required aria-describedby="noteLimit" placeholder="聊聊这一章里让你印象最深的地方……"></textarea>
+            <div class="composer-footer">
+              <span id="noteLimit" class="note-limit">0 / 800</span>
+              <button class="post-comment" type="submit">发表评论</button>
+            </div>
+          </div>
+          <p id="noteStatus" class="comment-status" role="status"></p>
+        </form>
+        <p id="noteEmpty" class="comment-empty">你还没有在本章留下评论。</p>
+        <ul id="notes" class="comment-list" aria-label="本章评论，最新在前"></ul>
+      </section>
+    </footer>
   </article>
 
   <div class="geshui" aria-hidden="true"></div>
